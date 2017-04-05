@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
 @Component({
-  selector: 'my-fileupload',
+  selector: 'cmp-fileupload',
   templateUrl: 'fileupload.component.html',
   styleUrls: ['fileupload.component.scss']
 })

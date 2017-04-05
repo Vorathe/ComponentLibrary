@@ -3,13 +3,13 @@ import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty
 import * as moment from 'moment';
 
 @Component({
-  selector: 'my-messaging',
+  selector: 'cmp-messaging',
   templateUrl: 'messaging.component.html',
   styleUrls: ['messaging.component.scss']
 })
 export class MessagingComponent {
 
-  public position: string = 'bottom-right';
+  public position = 'bottom-right';
   public positions: Array<any> = [
     { value: 'bottom-right', display: 'Bottom right' },
     { value: 'bottom-left', display: 'Bottom left' },

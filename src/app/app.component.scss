@@ -2,40 +2,25 @@
 @import '../style/abstracts/functions';
 @import '../style/abstracts/palette';
 
-:host {
-  display: block;
+main {
+  display: flex;
+  height: 100%;
+
+  @include rem(padding-top, 70px);
 }
-//main {
-//  font-family: Arial, Helvetica, sans-serif;
-//  padding-top: 4.000em;
-//  display: block;
-//  height: 100%;
-//}
 
 section {
   height: 100%;
   overflow: hidden;
-  padding: 10px 0 0 10px;
   background-color: palette(grey, light);
   position: relative;
-  border-top: 1px solid palette(white, dark);
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    left: 11px;
-    right: 31px;
-    height: 20px;
-    z-index: 2;
-  }
-  &:before {
-    top: 11px;
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,252,252,0.15) 100%);
-  }
-  &:after {
-    bottom: 0;
-    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,252,252,0.15) 100%);
-    color: blue;
-  }
+  border-top: solid palette(white, dark);
+  flex: 1 0 auto;
+
+  @include rem((
+    padding: 10px,
+    border-width: 1px
+  ));
 }
 
 .section-inner {

@@ -1,12 +1,22 @@
+@import '../../../../style/abstracts/functions';
 @import '../../../../style/abstracts/palette';
 
-header {
-  padding: 16px;
+:host {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  h1 {
-    margin-bottom: 0;
+  right: 0;
+  z-index: 9998;
+}
+
+header {
+  background-color: palette(black, lighter);
+  position: relative;
+  z-index: 11;
+
+  @include rem(height, 70px);
+
+  .content__full {
+    height: 100%;
   }
 }

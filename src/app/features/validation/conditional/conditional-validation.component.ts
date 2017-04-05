@@ -1,9 +1,9 @@
-import {Component, OnInit, trigger, transition, animate, keyframes, style} from '@angular/core';
+import { Component, OnInit, trigger, transition, animate, keyframes, style } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ConditionalForm } from '../../../shared';
 
 @Component({
-  selector: 'my-conditional-validation',
+  selector: 'cmp-conditional-validation',
   templateUrl: 'conditional-validation.component.html',
   animations: [
     trigger('slide', [
@@ -29,7 +29,7 @@ import { ConditionalForm } from '../../../shared';
 
 export class ConditionalValidationComponent implements OnInit {
   public conditionalForm: FormGroup;
-  public submitted: boolean = false;
+  public submitted = false;
 
   constructor(private _fb: FormBuilder) { }
 

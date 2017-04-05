@@ -3,17 +3,18 @@ import {
   OnInit,
   Input,
   Output,
-  // OnChanges,
-  EventEmitter,
+  EventEmitter
+} from '@angular/core';
+
+import {
   trigger,
-  // state,
   style,
   animate,
   transition, keyframes
-} from '@angular/core';
+} from '@angular/animations';
 
 @Component({
-  selector: 'my-modal',
+  selector: 'cmp-modal',
   templateUrl: 'modal.component.html',
   styleUrls: ['modal.component.scss'],
   animations: [

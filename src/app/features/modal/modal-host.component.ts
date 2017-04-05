@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-modal-host',
+  selector: 'cmp-modal-host',
   templateUrl: 'modal-host.component.html'
 })
 

@@ -1,15 +1,15 @@
-import {Component, HostListener, HostBinding} from '@angular/core';
+import { Component, HostListener, HostBinding } from '@angular/core';
 import { GiphySearchService } from '../../shared';
 
 @Component({
-  selector: 'my-search',
+  selector: 'cmp-search',
   templateUrl: 'search.component.html',
   styleUrls: ['search.component.scss']
 })
 export class SearchComponent {
-  public params: string = '';
+  public params = '';
   public gifs: Array<any> = [];
-  public timeoutLength: number = 1000;
+  public timeoutLength = 1000;
   timeoutSearch: any;
 
   @HostBinding('attr.role') role = 'form';

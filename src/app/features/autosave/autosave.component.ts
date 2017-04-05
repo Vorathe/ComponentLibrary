@@ -4,18 +4,18 @@ import { User } from '../../shared';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'my-autosave',
+  selector: 'cmp-autosave',
   templateUrl: 'autosave.component.html'
 })
 
 export class AutoSaveComponent implements OnInit {
   public myForm: FormGroup;
-  public submitted: boolean = false;
+  public submitted = false;
   public events: any[] = [];
   public currentStatus: string;
   public modelCopy: Object;
   public lastSaved: any;
-  public timeoutLength: number = 5000;
+  public timeoutLength = 5000;
   timeoutSave: any;
 
   @HostBinding('attr.role') role = 'form';

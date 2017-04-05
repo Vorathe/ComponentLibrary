@@ -1,7 +1,8 @@
-import { Component, Input, trigger, transition, animate, keyframes, style } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { trigger, transition, animate, keyframes, style } from '@angular/animations';
 
 @Component({
-  selector: 'my-tab-content',
+  selector: 'cmp-tab-content',
   template: `
       <div *ngIf="active" [@fade]>
         <ng-content></ng-content>

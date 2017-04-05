@@ -1,8 +1,8 @@
-<my-tab-list>
-  <my-tab-content [title]="tab.title" *ngFor="let tab of tabs">
+<cmp-tab-list>
+  <cmp-tab-content [title]="tab.title" *ngFor="let tab of tabs">
     {{tab.content}}
-  </my-tab-content>
-  <my-tab-content [title]="'Such form'">
+  </cmp-tab-content>
+  <cmp-tab-content [title]="'Such form'">
     <form>
       <div class="row">
         <div class="col-md-6">
@@ -21,5 +21,5 @@
         </div>
       </div>
     </form>
-  </my-tab-content>
-</my-tab-list>
+  </cmp-tab-content>
+</cmp-tab-list>

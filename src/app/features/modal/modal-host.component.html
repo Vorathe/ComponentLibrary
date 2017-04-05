@@ -13,7 +13,7 @@
   <div class="col-md-6">
     <div class="container-inner">
       <span class="v-align-margin text-center">Container</span>
-      <my-modal [(visible)]="showIsolatedDialog" [closableOverlay]="clickIsolatedOverlayClose" [isolatedModal]="true">
+      <cmp-modal [(visible)]="showIsolatedDialog" [closableOverlay]="clickIsolatedOverlayClose" [isolatedModal]="true">
         <h2>Modal</h2>
         <p class="flex-grow margin-20">A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. The unexpected is our normal routine. That might've been one of the shortest assignments in the history of Starfleet.</p>
         <div class="row v-align-middle">
@@ -23,7 +23,7 @@
             <button (click)="showIsolatedDialog = !showIsolatedDialog" class="btn">Close</button>
           </div>
         </div>
-      </my-modal>
+      </cmp-modal>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
   </div>
 </div>
 
-<my-modal [(visible)]="showDialog" [closableOverlay]="clickOverlayClose">
+<cmp-modal [(visible)]="showDialog" [closableOverlay]="clickOverlayClose">
   <h2>Modal</h2>
   <p class="flex-grow">A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. The unexpected is our normal routine. That might've been one of the shortest assignments in the history of Starfleet.</p>
   <div class="row v-align-middle">
@@ -43,6 +43,6 @@
       <button (click)="showDialog = !showDialog" class="btn">Close</button>
     </div>
   </div>
-</my-modal>
+</cmp-modal>
 
 
