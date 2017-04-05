@@ -1,0 +1,53 @@
+.masonry {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.masonry-item {
+  flex-grow: 2;
+  display: flex;
+}
+
+video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.brick {
+  width: 200px;
+  background: green;
+  margin: 5px;
+  padding: 15px;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+div#masonry {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vw;
+  max-height: 800px;
+  font-size: 0;
+}
+div#masonry img {
+  width: 33.3%;
+  transition: .8s opacity;
+}
+
+div#masonry:hover img { opacity: 0.3; }
+div#masonry:hover img:hover { opacity: 1; }
+
+/* fallback for earlier versions of Firefox */
+
+@supports not (flex-wrap: wrap) {
+  div#masonry { display: block; }
+  div#masonry img {
+    display: inline-block;
+    vertical-align: top;
+  }
+}

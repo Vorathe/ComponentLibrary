@@ -1,0 +1,48 @@
+<h2>Global Modal</h2>
+<div class="row margin-20">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-lg-4">
+        <button (click)="showDialog = !showDialog" class="btn"><span *ngIf="!showDialog">Open Modal</span><span *ngIf="showDialog">Modal Opened</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<h2>Isolated Modal</h2>
+<div class="row margin-20">
+  <div class="col-md-6">
+    <div class="container-inner">
+      <span class="v-align-margin text-center">Container</span>
+      <my-modal [(visible)]="showIsolatedDialog" [closableOverlay]="clickIsolatedOverlayClose" [isolatedModal]="true">
+        <h2>Modal</h2>
+        <p class="flex-grow margin-20">A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. The unexpected is our normal routine. That might've been one of the shortest assignments in the history of Starfleet.</p>
+        <div class="row v-align-middle">
+          <div class="col-md-8">
+          </div>
+          <div class="col-md-4">
+            <button (click)="showIsolatedDialog = !showIsolatedDialog" class="btn">Close</button>
+          </div>
+        </div>
+      </my-modal>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <button (click)="showIsolatedDialog = !showIsolatedDialog" class="btn"><span *ngIf="!showIsolatedDialog">Open Modal</span><span *ngIf="showIsolatedDialog">Modal Opened</span></button>
+  </div>
+</div>
+
+<my-modal [(visible)]="showDialog" [closableOverlay]="clickOverlayClose">
+  <h2>Modal</h2>
+  <p class="flex-grow">A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. The unexpected is our normal routine. That might've been one of the shortest assignments in the history of Starfleet.</p>
+  <div class="row v-align-middle">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+      <button (click)="showDialog = !showDialog" class="btn">Close</button>
+    </div>
+  </div>
+</my-modal>
+
+

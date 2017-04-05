@@ -1,0 +1,39 @@
+<h2>Validation</h2>
+<div class="row">
+  <div class="col-md-4">
+    <form [formGroup]="longForm" novalidate (ngSubmit)="save(longForm.value, longForm.valid)">
+      <fieldset>
+        <div class="field-group">
+          <label for="firstname" class="required">First name</label>
+          <input type="text" formControlName="firstname" id="firstname">
+          {{longForm.controls.firstname.value}}
+          <small [hidden]="longForm.controls.firstname.valid || (longForm.controls.firstname.pristine && !submitted)" class="error">This field is required</small>
+        </div>
+        <div class="field-group">
+          <label for="lastname" class="required">Last name</label>
+          <input type="text" formControlName="lastname" id="lastname">
+          <small class="error" [hidden]="longForm.controls.lastname.valid || (longForm.controls.lastname.pristine && !submitted)">This field is required</small>
+        </div>
+        <div class="field-group">
+          <label for="email" class="required">Email address</label>
+          <input type="email" formControlName="email" id="email" (blur)="onBlur($event, 'email', longForm.controls.email.value.length, longForm.controls.email.dirty)">
+          <small class="error" [hidden]="(longForm.controls.email.valid || longForm.controls.email.untouched && !submitted) || (longForm.controls.email.pristine && !submitted)">Please enter a valid email address</small>
+        </div>
+        <div class="field-group">
+          <label for="minLength" class="required">Min Length</label>
+          <input type="text" formControlName="address" id="minLength" (blur)="onBlur($event, 'address', longForm.controls.address.value.length, longForm.controls.address.dirty)">
+          <small class="error" [hidden]="(longForm.controls.address.valid || longForm.controls.address.untouched && !submitted) || (longForm.controls.address.pristine && !submitted)">Three or more characters are required</small>
+        </div>
+      </fieldset>
+      <div class="row v-align-middle">
+        <div class="col-md-8">
+          <small class="error" [hidden]="longForm.valid">The form is invalid</small>
+          <small [hidden]="!longForm.valid">The form is valid</small>
+        </div>
+        <div class="col-md-4">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

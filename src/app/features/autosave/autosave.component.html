@@ -1,0 +1,47 @@
+<h2>Autosave</h2>
+<!--<button (click)="undo()">Undo</button>-->
+<div class="row">
+  <div class="col-md-4">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+      <div class="field-group">
+        <label for="name" class="required">Name</label>
+        <input type="text" formControlName="name" id="name">
+        <small [hidden]="myForm.controls.name.valid || (myForm.controls.name.pristine && !submitted)" class="error">
+          Name is required (minimum 5 characters).
+        </small>
+      </div>
+      <div class="field-group" formGroupName="address">
+        <label for="address" class="required">Address</label>
+        <input type="text" formControlName="street" id="address">
+        <small [hidden]="myForm.controls.address.controls.street.valid || (myForm.controls.address.controls.street.pristine && !submitted)" class="error">
+          Address is required
+        </small>
+      </div>
+      <div class="field-group" formGroupName="address">
+        <label for="postcode">Postcode</label>
+        <input type="text" formControlName="postcode" id="postcode">
+      </div>
+      <div class="row v-align-middle">
+        <div class="col-md-8">
+          <small [hidden]="!lastSaved">Last saved at {{lastSaved}}</small>
+        </div>
+        <div class="col-md-4">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+      <!--Debug-->
+      <!--<div style="margin-bottom: 20px;">-->
+        <!--<div>myForm details:</div>-->
+        <!--<pre>Is myForm valid?: {{myForm.valid | json}}</pre>-->
+        <!--<pre>Is myForm submitted?: {{submitted | json}}</pre>-->
+        <!--<pre>myForm value: {{myForm.value | json}}</pre>-->
+      <!--</div>-->
+      <!--<div style="margin-bottom: 20px;">-->
+        <!--Form changes:-->
+      <!--</div>-->
+      <!--<div *ngFor="let event of events" style="margin-bottom: 20px;">-->
+        <!--<pre> {{ event | json }} </pre>-->
+      <!--</div>-->
+    </form>
+  </div>
+</div>

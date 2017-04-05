@@ -1,0 +1,25 @@
+<my-tab-list>
+  <my-tab-content [title]="tab.title" *ngFor="let tab of tabs">
+    {{tab.content}}
+  </my-tab-content>
+  <my-tab-content [title]="'Such form'">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="field-group">
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname">
+          </div>
+          <div class="field-group">
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname">
+          </div>
+          <div class="field-group">
+            <label for="email">Email</label>
+            <input type="text" id="email">
+          </div>
+        </div>
+      </div>
+    </form>
+  </my-tab-content>
+</my-tab-list>

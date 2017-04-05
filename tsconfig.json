@@ -1,0 +1,23 @@
+// "skipLibCheck": true is temporarily necessary for @types/lodash
+// Emits warning: Lodash All declarations of 'WeakMap' must have identical type parameters.
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/14324
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "lib": ["es2015", "dom"],
+    "skipLibCheck": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}

@@ -1,0 +1,116 @@
+<h2>File Upload Add Files</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div ng2FileDrop
+         [ngClass]="{'file-over': hasBaseDropZoneOver}"
+         (fileOver)="fileOverBase($event)"
+         [uploader]="uploader"
+         class="drop-zone flex">
+      <div class="v-align-margin">
+        <ul>
+            <li *ngFor="let item of uploader.queue" [ngClass]="{'upload-error': item.isError}">
+              <div class="row">
+                <div class="col-xs-9">
+                  <div class="upload-item">
+                    <i class="material-icons">{{item.isError ? 'error_outline' : 'insert_drive_file'}}</i>
+                    <div class="upload-item-group">
+                      <div class="upload-item-name">{{ item?.file?.name }}</div>
+                      <small class="upload-item-stats">{{ item?.file?.size/1024/1024 | number:'.2' }}MB | {{ item?.file?.type }}</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div class="button-group">
+                    <button class="icon" type="button"
+                            (click)="item.upload()"
+                            [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                      <i class="material-icons" *ngIf="!item.isError">file_upload</i>
+                      <i class="material-icons" *ngIf="item.isError">refresh</i>
+                    </button>
+                    <button class="icon" type="button"
+                            (click)="item.remove()">
+                      <i class="material-icons">remove_circle_outline</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <div class="input-file-wrapper">
+          <label for="uploadFile">Drag files here or browse to upload</label>
+          <input type="file" id="uploadFile" ng2FileSelect [uploader]="uploader" multiple  />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row margin-20">
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-sm-4 v-align-margin">
+        Queue length: {{ uploader?.queue?.length }}
+      </div>
+      <div class="col-md-8">
+        <div class="button-group">
+          <button type="button"
+                  (click)="uploader.uploadAll()"
+                  [disabled]="!uploader.getNotUploadedItems().length || uploader.isUploading">
+            Upload all
+          </button>
+          <button type="button"
+                  (click)="uploader.clearQueue()"
+                  [disabled]="!uploader.queue.length">
+            Remove all
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2>File Upload Success</h2>
+<div class="row margin-20">
+  <div class="col-md-6">
+    <div class="v-align-margin">
+      <ul>
+        <li class="upload-success">
+          <div class="row">
+            <div class="col-xs-9">
+              <div class="upload-item">
+                <i class="material-icons">check</i>
+                <div class="upload-item-group">
+                  <div class="upload-item-name">File-name.exe</div>
+                  <small class="upload-item-stats">99.99MB | image/jpg</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h2>File Upload Progress</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="v-align-margin">
+      <ul>
+        <li class="upload-loading">
+          <div class="row">
+            <div class="col-xs-9">
+              <div class="upload-item">
+                <div class="loading-icon"></div>
+                <div class="upload-item-group">
+                  <div class="upload-item-name">File-name.exe</div>
+                  <small class="upload-item-stats">99.99MB | image/jpg</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper">
+            <div class="progress"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

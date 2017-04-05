@@ -1,0 +1,152 @@
+// styles in src/style directory are applied to the whole page
+@import './abstracts/functions';
+@import './abstracts/palette';
+@import './abstracts/variables';
+@import './typography/daimler-cs';
+@import './layout/global';
+@import 'toasty';
+
+html, body, my-app, my-search { height: 100%;  width: 100%; }
+my-search {
+  display: block;
+}
+body {
+    background: palette(white);
+    color: palette(black, light);
+}
+
+p {
+  line-height: 1.25;
+}
+
+a {
+    color: palette(blue);
+}
+h1 { font-size: 2em; font-weight: bold; margin-bottom: 1em; }
+h2 { font-size: 1.5em; font-weight: bold;  margin-bottom: 1em; }
+h3 { font-size: 1.17em; font-weight: bold; margin-bottom: 1em; }
+h4 { font-size: 1.12em; font-weight: normal; }
+h5 { font-size: .83em; font-weight: normal; }
+h6 { font-size: .75em; font-weight: normal; }
+
+
+button {
+  background-color: palette(grey, dark);
+  border: 0;
+  padding: 5px;
+  font-size: 0.750em;
+  text-transform: uppercase;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+small {
+  font-size: 0.625em;
+}
+
+.flex {
+  display: flex;
+}
+
+.error {
+  color: palette(red, err);
+  padding: 3px 0;
+}
+
+.required:after {
+  content: ' \2731';
+  font-size: 0.600em;
+  color: palette(red, err);
+  vertical-align: top;
+}
+
+[type=text], textarea, select, [type=email] {
+  padding: 3px;
+  width: 100%;
+}
+
+.field-group {
+  margin-bottom: 20px;
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.625em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.radio-group {
+  margin-bottom: 10px;
+  vertical-align: middle;
+  input {
+    vertical-align: middle;
+  }
+  input + label {
+    display: inline-block;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+pre {
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+}
+
+.v-align-middle {
+  align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.margin-20 {
+  margin-bottom: 1.250em;
+}
+
+.container-inner {
+  min-height: 250px;
+  border: 1px solid palette(grey);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.v-align-margin {
+  margin: auto 0;
+}
+
+.vh-align-margin {
+  margin: auto;
+}
+.text-center {
+  text-align: center;
+}
+
+.tab-list {
+  background-color: palette(grey, light);
+  padding: 20px 20px 0 20px;
+  > li {
+    display: inline-block;
+    padding: 15px 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &.active {
+      background-color: $_color-base-white;
+      border-top-color: palette(black, lighter);
+      font-weight: bold;
+    }
+  }
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid palette(grey, light);
+  border-top: 0;
+  min-height: 200px;
+}

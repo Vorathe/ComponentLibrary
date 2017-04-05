@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.10
+3 info using node@v7.3.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle app@0.0.0~prestart: app@0.0.0
+6 silly lifecycle app@0.0.0~prestart: no script for prestart, continuing
+7 info lifecycle app@0.0.0~start: app@0.0.0
+8 verbose lifecycle app@0.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle app@0.0.0~start: PATH: C:\Users\Daniel\AppData\Roaming\nvm\v7.3.0\node_modules\npm\bin\node-gyp-bin;C:\Users\Daniel\Documents\Development\ComponentLibrary\node_modules\.bin;c:\programdata\oracle\java\javapath;c:\users\daniel\documents\tools\python27\;c:\users\daniel\documents\tools\python27\scripts;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\users\daniel\.dnx\bin;c:\program files\microsoft dnx\dnvm\;c:\program files (x86)\windows kits\8.1\windows performance toolkit\;c:\program files (x86)\microsoft asp.net\asp.net web pages\v1.0\;c:\program files\microsoft\web platform installer\;c:\program files (x86)\skype\phone\;c:\users\daniel\appdata\roaming\nvm;c:\program files\nodejs;c:\program files\mysql\mysql server 5.7\bin;c:\program files\git\cmd;c:\program files\microsoft sql server\130\tools\binn\;c:\program files (x86)\microsoft sql server\110\dts\binn\;c:\program files (x86)\microsoft sql server\120\dts\binn\;c:\program files (x86)\microsoft sql server\130\dts\binn\;c:\windows\system32\config\systemprofile\.dnx\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\W;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Users\Daniel\AppData\Roaming\npm;C:\Users\Daniel\AppData\Local\GitHub\PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad\cmd;C:\Users\Daniel\Documents\Tools\AndroidSDK\platform-tools;C:\Users\Daniel\AppData\Local\atom\bin;C:\Users\Daniel\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Daniel\AppData\Local\Microsoft\WindowsApps;
+10 verbose lifecycle app@0.0.0~start: CWD: C:\Users\Daniel\Documents\Development\ComponentLibrary
+11 silly lifecycle app@0.0.0~start: Args: [ '/d /s /c', 'npm run server' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1022:11)
+12 verbose stack     at process.kill (internal/process.js:173:13)
+12 verbose stack     at process.listener (C:\Users\Daniel\AppData\Roaming\nvm\v7.3.0\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (C:\Users\Daniel\AppData\Roaming\nvm\v7.3.0\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (C:\Users\Daniel\AppData\Roaming\nvm\v7.3.0\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:200:44)
+13 verbose cwd C:\Users\Daniel\Documents\Development\ComponentLibrary
+14 error Windows_NT 10.0.15063
+15 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 error node v7.3.0
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

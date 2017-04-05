@@ -1,0 +1,44 @@
+<h2>Conditional Validation</h2>
+<div class="row">
+  <div class="col-md-4">
+    <form [formGroup]="conditionalForm" novalidate (ngSubmit)="save(conditionalForm.value, conditionalForm.valid)">
+      <fieldset>
+        <div class="field-group">
+          <label for="firstName" class="required">First Name</label>
+          <input type="text" formControlName="firstName" id="firstName">
+          <small [hidden]="conditionalForm.controls.firstName.valid || (conditionalForm.controls.firstName.pristine && !submitted)" class="error">This field is required</small>
+        </div>
+        <div class="field-group">
+          <label for="lastName" class="required">Last Name</label>
+          <input type="text" formControlName="lastName" id="lastName">
+          <small [hidden]="conditionalForm.controls.lastName.valid || (conditionalForm.controls.lastName.pristine && !submitted)" class="error">This field is required</small>
+        </div>
+        <div class="field-group radio" formGroupName="conditional">
+          <label>Do you like purple?</label>
+          <div class="radio-group">
+            <input type="radio" formControlName="purple" id="purpleYes" name="purple" value="yes">
+            <label for="purpleYes">Yes</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" formControlName="purple" id="purpleNo" name="purple" value="no">
+            <label for="purpleNo">No</label>
+          </div>
+        </div>
+        <div [@slide] class="field-group max-height" formGroupName="conditional" *ngIf="conditionalForm.controls.conditional.controls.comment">
+          <label class="required">Please tell us why</label>
+          <textarea formControlName="comment" value="" autofocus></textarea>
+          <small [hidden]="conditionalForm.controls.conditional.controls.comment.valid || (conditionalForm.controls.conditional.controls.comment.pristine && !submitted)" class="error">This field is required</small>
+        </div>
+      </fieldset>
+      <div class="row v-align-middle">
+        <div class="col-md-8">
+          <small class="error" [hidden]="conditionalForm.valid">The form is invalid</small>
+          <small [hidden]="!conditionalForm.valid">The form is valid</small>
+        </div>
+        <div class="col-md-4">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

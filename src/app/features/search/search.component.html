@@ -1,0 +1,13 @@
+<form>
+  <div class="field-group">
+    <label>Search Giphy</label>
+    <input type="text" [(ngModel)]="params" [ngModelOptions]="{standalone: true}">
+  </div>
+  <button (click)="search(params)">Search</button>
+</form>
+
+<div class="masonry">
+  <div class="masonry-item" *ngFor="let gif of gifs">
+    <img [attr.src]="gif.images.downsized_large.url">
+  </div>
+</div>

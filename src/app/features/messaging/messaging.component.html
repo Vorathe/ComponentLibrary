@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Messaging</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="field-group">
+          <label>Message position</label>
+          <select name="position" [(ngModel)]="position">
+            <option *ngFor="let position of positions" [value]="position.value">{{position.display}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <h3>Information Message</h3>
+    <div class="row margin-20">
+      <div class="col-md-4">
+        <button (click)="addInfoToast()">Add Info message</button>
+      </div>
+    </div>
+    <h3>Loading Message</h3>
+    <div class="row margin-20">
+      <div class="col-md-4">
+        <button (click)="addLoadingToast()">Add Loading message</button>
+      </div>
+    </div>
+    <h3>Success Message</h3>
+    <div class="row margin-20">
+      <div class="col-md-4">
+        <button (click)="addSuccessToast()">Add Success message</button>
+      </div>
+    </div>
+    <h3>Warning Message</h3>
+    <div class="row margin-20">
+      <div class="col-md-4">
+        <button (click)="addWarningToast()">Add Warning message</button>
+      </div>
+    </div>
+    <h3>Error Message</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <button (click)="addErrorToast()">Add Error message</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2>Notifications</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          <li *ngFor="let item of notifications; let i = index">
+            <div>{{item.title}}</div>
+            <div>{{item.msg}}</div>
+            <div><small>{{item.time}}</small></div>
+            <div class="close-btn" (click)="removeNotification(i)"><i class="material-icons">close</i></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng2-toasty [position]="position"></ng2-toasty>

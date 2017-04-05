@@ -1,0 +1,40 @@
+@import '../typography/daimler-cs';
+
+html,
+body,
+cmp-app {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: palette(grey, dark);
+  font-family: 'Daimler CS', sans-serif;
+  color: #fff;
+  line-height: 1.5;
+
+  @include rem(font-size, 14px);
+}
+
+a {
+  color: palette(blue);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: palette(blue, light);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.content--box {
+  box-sizing: content-box !important;
+}

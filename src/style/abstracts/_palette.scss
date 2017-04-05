@@ -1,0 +1,44 @@
+$_color-base-grey:  rgb(229, 231, 234);
+$_color-base-white: rgb(255, 255, 255);
+$_color-base-black: rgb(0, 0, 0);
+$_color-base-blue:  rgb(74, 144, 226);
+
+$palettes: (
+  red: (
+    base:   rgb(137, 7, 45),
+    err:    rgb(208, 2, 27),
+    light: lighten(rgb(208, 2, 27), 21%),
+    lightest: lighten(rgb(208, 2, 27), 50%)
+  ),
+  grey: (
+    base:   $_color-base-grey,
+    light:  lighten($_color-base-grey, 3%),
+    lighter:  lighten($_color-base-grey, 6%),
+    dark:   darken($_color-base-grey, 6%),
+    darker: darken($_color-base-grey, 9%),
+    darkest: darken($_color-base-grey, 16%)
+  ),
+  white: (
+    base:   $_color-base-white,
+    dark:   darken($_color-base-white, 10%),
+    darker: darken($_color-base-white, 15%)
+  ),
+  black: (
+    base:     $_color-base-black,
+    light:    lighten($_color-base-black, 10%),
+    lighter:  lighten($_color-base-black, 15%),
+    lightest: lighten($_color-base-black, 25%)
+  ),
+  blue: (
+    base: $_color-base-blue,
+    light:  lighten($_color-base-blue, 10%),
+    lighter: lighten($_color-base-blue, 15%),
+    lightest: lighten($_color-base-blue, 35%),
+    dark: darken($_color-base-blue, 10%),
+    darker: darken($_color-base-blue, 15%)
+  )
+);
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
