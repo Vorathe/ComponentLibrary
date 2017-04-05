@@ -13,10 +13,20 @@ header {
   background-color: palette(black, lighter);
   position: relative;
   z-index: 11;
+  color: palette(white, dark);
+  display: flex;
+  align-items: center;
 
-  @include rem(height, 70px);
+  @include rem((
+    height: 70px,
+    padding: 0 20px
+  ));
 
   .content__full {
     height: 100%;
+  }
+
+  h1 {
+    margin-bottom: 0;
   }
 }
