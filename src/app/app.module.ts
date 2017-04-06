@@ -23,6 +23,8 @@ import { MessagingComponent } from './features/messaging/messaging.component';
 import { FileUploadComponent } from './features/fileupload/fileupload.component';
 import { TabContentComponent, TabListComponent } from './shared';
 import { TabsComponent } from './features/tabs/tabs.component';
+import { DropdownDirective, DropdownStateDirective } from './shared/ui/directives/dropdown';
+import { DropdownComponent } from './features/dropdown/dropdown.component';
 import { routing } from './app.routing';
 
 import { AddressService } from './shared';
@@ -57,7 +59,10 @@ import { GiphySearchService } from './shared';
     FileUploadComponent,
     TabContentComponent,
     TabListComponent,
-    TabsComponent
+    TabsComponent,
+    DropdownDirective,
+    DropdownStateDirective,
+    DropdownComponent
   ],
   providers: [GiphySearchService, AddressService],
   bootstrap: [AppComponent]

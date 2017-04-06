@@ -1,0 +1,96 @@
+.dropdown {
+  background-color: $_color-base-white;
+  border-radius: 2px;
+  border: solid $_color-base-black;
+  color: $_color-base-black;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+
+  @include rem((
+    padding: 4px 10px,
+    border-width: 1px
+  ));
+
+  &--button {
+    padding: 0;
+  }
+
+  i {
+    vertical-align: middle;
+    transition: transform 180ms ease;
+  }
+
+  &--open > i {
+    transform: rotate(180deg);
+  }
+
+  &--open {
+    border-bottom-color: $_color-base-white;
+
+    > span {
+      color: palette(blue);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 100%;
+    background-color: $_color-base-white;
+    border: 1px solid black;
+    border-top: 0;
+  }
+
+  &__menu > li {
+    border-top: 1px solid $_color-base-black;
+    background-color: inherit;
+    transition: background-color, color 140ms ease;
+
+    @include rem((
+      padding: 4px 10px,
+      border-width: 1px
+    ));
+
+    &:hover {
+      color: $_color-base-white;
+      background-color: palette(blue, lighter);
+    }
+  }
+}
+
+.dropdown--button > button {
+  position: relative;
+  z-index: 2;
+  border: 0;
+
+  @include rem((
+    padding: 4px 10px,
+    border-width: 1px
+  ));
+}
+
+.dropdown--button > button i {
+  transition: all 140ms linear;
+}
+
+.dropdown--button.dropdown--open > button i {
+  transform: rotateX(180deg);
+}
+
+.dropdown--button > ul {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10%);
+  transition: all 140ms linear;
+  z-index: 1;
+}
+
+.dropdown--button.dropdown--open > ul {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

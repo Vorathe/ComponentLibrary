@@ -9,6 +9,7 @@ import { MessagingComponent } from './features/messaging/messaging.component';
 import { FileUploadComponent } from './features/fileupload/fileupload.component';
 import { TabsComponent } from './features/tabs/tabs.component';
 import { SearchComponent } from './features/search/search.component';
+import { DropdownComponent } from './features/dropdown/dropdown.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'messaging', component: MessagingComponent },
   { path: 'file-upload', component: FileUploadComponent },
   { path: 'tabs', component: TabsComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'dropdown', component: DropdownComponent }
 ];
 
 export const routing = RouterModule.forRoot(routes);
